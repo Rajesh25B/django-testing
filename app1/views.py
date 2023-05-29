@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 
 def homePage(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'context_data': request.POST.get('input-1')})

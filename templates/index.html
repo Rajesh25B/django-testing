@@ -1,12 +1,20 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>This is H1 tag</h1>
-    <input id="newitem" placeholder="Enter your name"/>
-</body>
+    <form action="POST">
+      <input name="input-1" id="input1" placeholder="Enter your name" />
+    </form>
+
+    <table id="id_list_table">
+      <tr>
+        <td>{{context_data}}</td>
+      </tr>
+    </table>
+  </body>
 </html>
