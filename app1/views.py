@@ -1,7 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 # Create your views here.
 
+from app1.models import Item
+
 
 def homePage(request):
-    return render(request, 'index.html', {'context_data': request.POST.get('input-1')})
+    if request.method == 'POST':
+        Item.objects.create(text=request.POST['item_text'])
+        return redirect('/')
+    return render(request, 'index.html')
