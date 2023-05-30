@@ -11,10 +11,11 @@
       <input name="item_text" id="input1" type="text" placeholder="Enter your name" />
     </form>
 
+
     <table id="id_list_table">
-      <tr>
-        <td>{{new_item_text}}</td>
-      </tr>
-    </table>
+      {% for item in items %}
+      <tr><td>1: {{ item.text }}</td></tr>
+      {% endfor %}
+      </table>
   </body>
 </html>
