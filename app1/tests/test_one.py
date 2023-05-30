@@ -8,7 +8,7 @@ from app1.views import homePage
 class SmokeTest(TestCase):
     
     def testHomePageURL(self):
-        url = resolve('/', urlconf=None)
+        url = resolve('/home', urlconf=None)
         self.assertEqual(url.func, homePage)
     
     def testTitle(self):
@@ -23,16 +23,16 @@ class SmokeTest(TestCase):
 class BrowserSetupTest(TestCase):
     '''manually render the template ourselves in the test'''
     def setUp(self):
-        self.response = self.client.get('/')
+        self.response = self.client.get('/home')
         
     def test_return_correct_home_page(self):
         html = self.response.content.decode('utf8')
-        self.assertTemplateUsed(self.response, 'index.html')
+        self.assertTemplateUsed(self.response, 'home.html')
     
     def test_can_save_a_post_request(self):
-        response = self.client.post('', data={"input-1": "A new list item"})
+        response = self.client.post('/home', data={"item_text": "A new list item"})
         self.assertIn('A new list item', response.content.decode())
 
     def test_templates_to_render_response(self):
-        response = self.client.post('', data={'input-1': "New Data"})
-        self.assertTemplateUsed(response, 'index.html')
+        response = self.client.post('/home', data={'item_text': "New Data"})
+        self.assertTemplateUsed(self.response, 'home.html')

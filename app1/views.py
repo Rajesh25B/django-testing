@@ -5,9 +5,15 @@ from django.http import HttpResponse
 from app1.models import Item
 
 
-def homePage(request):
+def indexPage(request):
     if request.method == 'POST':
         Item.objects.create(text=request.POST['item_text'])
         return redirect('/')
     items = Item.objects.all()
     return render(request, 'index.html', {'items': items})
+
+
+def homePage(request):
+    if request.method == "POST":
+        return HttpResponse(request.POST['item_text'])
+    return render(request, 'home.html')
