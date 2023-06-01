@@ -34,8 +34,11 @@ class TestModelItem(TestCase):
         self.assertEqual(response['location'], '/')
 
     def test_displays_all_list_items(self):
+        '''Triangulation technique uses two assertions'''
         Item.objects.create(text='itemey 1')
         Item.objects.create(text='itemey 2')
+
         response = self.client.get('')
+
         self.assertIn('itemey 1', response.content.decode())
         self.assertIn('itemey 2', response.content.decode())
