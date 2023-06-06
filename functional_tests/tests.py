@@ -1,8 +1,10 @@
 import unittest
+
 from selenium import webdriver
+from django.test import LiveServerTestCase
 
 
-class TestNewMember(unittest.TestCase):
+class TestNewMember(LiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
 
@@ -10,12 +12,12 @@ class TestNewMember(unittest.TestCase):
         self.browser.quit()
 
     def testMember(self):
-        self.browser.get('http://127.0.0.1:8000/')
+        self.browser.get(LiveServerTestCase.live_server_url)
         self.assertIn('New Title', self.browser.title)
         self.fail('Done testing')
 
 
-if __name__ == '__main__':
-    unittest.main(warnings='ignore')
+# if __name__ == '__main__':
+#     unittest.main(warnings='ignore')
     # launches the unittest test runner which will automatically find test
     # classes and methods in the file and run them.

@@ -2,3 +2,18 @@
 1684907502614	geckodriver	INFO	Listening on 127.0.0.1:59115
 1685000060072	geckodriver	INFO	Listening on 127.0.0.1:7343
 1685000064137	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "7344" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\RAJESH\\AppData\\Local\\Temp\\rust_mozprofileC1lVog"
+1685614676975	geckodriver	INFO	Listening on 127.0.0.1:49819
+1685615137865	geckodriver	INFO	Listening on 127.0.0.1:32801
+
+Command '/usr/bin/firefox' requires the firefox snap to be installed.
+Please install it with:
+
+snap install firefox
+
+1685615137901	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "36887" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileYoh8u7"
+
+Command '/usr/bin/firefox' requires the firefox snap to be installed.
+Please install it with:
+
+snap install firefox
+
