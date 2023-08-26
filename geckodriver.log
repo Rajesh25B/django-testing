@@ -17,3 +17,5 @@ Please install it with:
 
 snap install firefox
 
+1686039636285	geckodriver	INFO	Listening on 127.0.0.1:44249
+1686039638743	geckodriver	INFO	Listening on 127.0.0.1:33727
